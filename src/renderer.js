@@ -2,7 +2,9 @@ let timer = null;
 let timeLeft = 25 * 60;
 
 function startTimer() {
-  if (timer !== null) return; // захист від подвійного запуску
+  if (timer !== null) return;
+  timeLeft--;
+  updateDisplay(timeLeft);
 
   timer = setInterval(() => {
     timeLeft--;
@@ -13,7 +15,7 @@ function startTimer() {
       timer = null;
       onTimerEnd();
     }
-  }, 1);
+  }, 1000);
 }
 
 function stopTimer() {
@@ -34,6 +36,6 @@ function updateDisplay(seconds) {
     `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
 }
 
-function onTimerEnd() {
-  new Audio('assets/bell.mp3').play();
+function onWorkTimerEnd() {
+  new Audio('assets/.mp3').play();
 }
