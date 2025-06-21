@@ -3,3 +3,37 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    height: 100vh;
+    font-family: 'Open Sans', times, serif;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 32vw;
+    width: 100vw;
+    max-width: 96vw;
+    gap: 16px;
+
+    padding: 1vh 4vw;
+}
+
+#logo p{
+    max-width: 32vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

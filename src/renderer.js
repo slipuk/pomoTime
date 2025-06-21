@@ -35,5 +35,5 @@ function updateDisplay(seconds) {
 }
 
 function onTimerEnd() {
-  new Audio('assets/alarm.mp3').play();
+  new Audio('assets/bell.mp3').play();
 }
