@@ -19,7 +19,7 @@ function startTimer() {
       timer = null;
       onTimerEnd();
     }
-  }, 0);
+  }, 10);
 }
 
 function stopTimer() {
@@ -43,26 +43,32 @@ function updateDisplay(seconds) {
     `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   //this interpolation method always leaves two numbers on each
   //timer section like 01:02
+
+  // to see what mode is currently in progress
+  document.getElementById("modeIndicator").textContent = 
+    currentMode === "work" ? "Work" :
+    currentMode === "shortBreak" ? "Short Break" : "Long Break";
 }
 
+// to chage current mode
 function onTimerEnd() {
   if (currentMode === "work" && workSectionCount !== 3) {
     currentMode = "shortBreak";
-    stopTimer();
     workSectionCount++;    
   }
   else if (currentMode === "work" && workSectionCount === 3) {
     currentMode = "longBreak";
     workSectionCount = 0;
-    stopTimer();
   }
   else {
     currentMode = "work";
-    stopTimer();
   }
+  playSound();
+  startTimer();
   changeCurrentMode();
 }
 
+// to set time for current mode
 function changeCurrentMode() {
   if (currentMode === "work") timeLeft = 25 * 60;
   else if (currentMode === "shortBreak") timeLeft = 5 * 60;
@@ -70,4 +76,6 @@ function changeCurrentMode() {
   updateDisplay(timeLeft);
 }
 
-update
+function playSound() {
+  new Audio('assets/clock_alarm.mp3').play();
+}

@@ -14,14 +14,11 @@
     <header>
         <div id="logo">
             <h1>PomoTime</h1>
-            <p class="defaultPara">only with discipline you will achieve success</p>
+            <p>only with discipline you will achieve success</p>
         </div>
         <input onclick="openSettingsWindow()" class="controlButton" id="settingsButton" type="button" value="Settings">
     </header>
     <main>
-        <div id="showModeBox">
-            <p class="defaultPara" id="displayMode">Work</p>
-        </div>
         <div id="timerBox">
             <p id="timerDisplay">25:00</p>
         </div>
@@ -29,6 +26,9 @@
             <input onclick="startTimer()" class="controlButton" id="startButton" type="button" value="Start">
             <input onclick="stopTimer()" class="controlButton" id="stopButton" type="button" value="Stop">
             <input onclick="resetTimer()" class="controlButton" id="resetButton" type="button" value="Reset">
+        </div>
+        <div id="modeIndicatorBox">
+            <p id="modeIndicator">Work</p>
         </div>
     </main>
     <footer>

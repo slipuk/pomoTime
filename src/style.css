@@ -63,15 +63,28 @@ main {
 }
 
 #controlBox {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 16px;
+}
+
+#modeIndicatorBox {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#modeIndicator {
+    font-size: 26px;
+    font-style: bold;
+    font-weight: 600;
+
+    padding-right: 10px;
 }
 
 .controlButton {
-    /* width: 100%; */
     background-color: var(--font-color);
     border: 4px var(--font-color);
     border-radius: 4px;
@@ -111,11 +124,13 @@ footer {
 
 footer a {
     font-size: 18px;
-    font-style: italic;
+    font-style: bold;
     font-weight: 600;
+    text-decoration: none;
 }
 
 footer a:link {color: var(--font-color);}
 footer a:visited {color: var(--visited-font-color);}
-footer a:hover {color: var(--hover-font-color);}
+footer a:hover {color: var(--hover-font-color); 
+                text-decoration: underline;}
 footer a:active {color: var(--font-color);}
