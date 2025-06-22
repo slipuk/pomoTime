@@ -1,5 +1,6 @@
 :root {
     --bg-color-light: #F8FAFC;
+    --bg-color: #d3d3d3;
     --font-color: #3a4c5c;
     --hover-font-color: #26323d;
     --visited-font-color: #1e3447;
@@ -23,7 +24,7 @@ body {
     background-color: var(--bg-color-light);
 }
 
-header {
+.headerFooterStyle {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -34,15 +35,20 @@ header {
     min-width: 32vw;
 
     padding: 1vh 4vw;
-    border-bottom: 4px solid;
     border-radius: 4px;
     border-color: var(--bg-color-dark);
 }
+
+header { border-bottom: 4px solid;}
 
 #logo p{
     font-size: 18px;
     font-style: italic;
     font-weight: 600;
+}
+
+#settingsButton {
+    width: auto;
 }
 
 main {
@@ -68,6 +74,28 @@ main {
     justify-content: center;
     align-items: center;
     gap: 16px;
+
+    /* fixing placement */
+    /* padding-left: 2px; */
+}
+
+#progressBarWrapper {
+    background-color:var(--bg-color);
+    width: 284px;
+    height: 8px;
+    margin: 8px 0px 4px 0px;
+
+    border-radius: 4px;
+}
+
+#progressBarFill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--font-color);
+
+    transition: width 0.1s linear;
+
+    border-radius: 2px;
 }
 
 #modeIndicatorBox {
@@ -80,14 +108,13 @@ main {
     font-size: 26px;
     font-style: bold;
     font-weight: 600;
-
-    padding-right: 10px;
 }
 
 .controlButton {
     background-color: var(--font-color);
     border: 4px var(--font-color);
     border-radius: 4px;
+    width: 84px;
     padding: 8px 16px;
     color: #F8FAFC;
     font-size: 20px;
@@ -107,19 +134,7 @@ main {
 }
 
 footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 16px;
-    
-    width: 100vw;
-    max-width: 96vw;
-    min-width: 32vw;
-    
-    padding: 1vh 4vw;
     border-top: 4px solid;
-    border-radius: 4px;
-    border-color: var(--bg-color-dark);
 }
 
 footer a {

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="headerFooterStyle">
         <div id="logo">
             <h1>PomoTime</h1>
             <p>only with discipline you will achieve success</p>
@@ -27,11 +27,16 @@
             <input onclick="stopTimer()" class="controlButton" id="stopButton" type="button" value="Stop">
             <input onclick="resetTimer()" class="controlButton" id="resetButton" type="button" value="Reset">
         </div>
+        <div id="progressBarWrapper">
+            <div id="progressBarFill">
+
+            </div>
+        </div>
         <div id="modeIndicatorBox">
             <p id="modeIndicator">Work</p>
         </div>
     </main>
-    <footer>
+    <footer class="headerFooterStyle">
         <a href="https://github.com/slipuk/" target="_blank" rel="noopener noreferrer">contact us</a>
         <a href="https://github.com/slipuk/pomoTime" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Source code</a>
     </footer>
