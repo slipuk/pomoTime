@@ -19,7 +19,7 @@ function startTimer() {
       timer = null;
       onTimerEnd();
     }
-  }, 0);
+  }, 1000);
 }
 
 function stopTimer() {
