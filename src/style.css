@@ -27,7 +27,7 @@ body {
 .headerFooterStyle {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 16px;
 
     width: 100vw;
@@ -47,7 +47,7 @@ header { border-bottom: 4px solid;}
     font-weight: 600;
 }
 
-#settingsButton {
+#openSettingsButton {
     width: auto;
 }
 
@@ -60,7 +60,6 @@ main {
     align-items: center;
 
     padding: 16vh 16vw;
-    /* border: 2px solid; */
 }
 
 #timerDisplay {
@@ -74,9 +73,6 @@ main {
     justify-content: center;
     align-items: center;
     gap: 16px;
-
-    /* fixing placement */
-    /* padding-left: 2px; */
 }
 
 #progressBarWrapper {
@@ -92,10 +88,8 @@ main {
     width: 0%;
     height: 100%;
     background-color: var(--font-color);
-
+    border-radius: 4px;
     transition: width 0.1s linear;
-
-    border-radius: 2px;
 }
 
 #modeIndicatorBox {
@@ -115,6 +109,7 @@ main {
     border: 4px var(--font-color);
     border-radius: 4px;
     width: 84px;
+    flex-shrink: 0;
     padding: 8px 16px;
     color: #F8FAFC;
     font-size: 20px;
@@ -133,9 +128,7 @@ main {
     outline: none;
 }
 
-footer {
-    border-top: 4px solid;
-}
+footer { border-top: 4px solid; }
 
 footer a {
     font-size: 18px;
@@ -149,3 +142,46 @@ footer a:visited {color: var(--visited-font-color);}
 footer a:hover {color: var(--hover-font-color); 
                 text-decoration: underline;}
 footer a:active {color: var(--font-color);}
+
+/* MODAL ####################################################### */
+
+.modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 450px;
+    padding: 1.3rem;
+    min-height: 250px;
+    position: absolute;
+    top: 20%;
+    background-color: var(--bg-color-light);
+    border: 2px solid var(--font-color);
+    border-radius: 4px;
+
+    z-index: 2;
+}
+
+#closeSettingsButton {
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    width: auto;
+    border-radius: 4px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+    display: none;
+}

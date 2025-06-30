@@ -16,7 +16,7 @@
             <h1>PomoTime</h1>
             <p>only with discipline you will achieve success</p>
         </div>
-        <input onclick="openSettingsWindow()" class="controlButton" id="settingsButton" type="button" value="Settings">
+        <input onclick="openSettingsWindow()" class="controlButton" id="openSettingsButton" type="button" value="Settings">
     </header>
     <main>
         <div id="timerBox">
@@ -40,6 +40,25 @@
         <a href="https://github.com/slipuk/" target="_blank" rel="noopener noreferrer">contact us</a>
         <a href="https://github.com/slipuk/pomoTime" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Source code</a>
     </footer>
+    
+    <!-- MODAL ############################################ -->
+
+    <section class="modal hidden">
+        <div>
+            <h3>hello there</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Numquam blanditiis placeat dolore nobis optio fugit a illum, 
+                odit ipsa hic eius dolores exercitationem, tenetur cum molestiae 
+                quod obcaecati similique quaerat.</p>
+            <input onclick="submitSettings()" class="controlButton" id="submitSettingsButton" type="button" value="Submit">
+        </div>
+        <div class="flex">
+            <input onclick="closeSettingsWindow()" class="controlButton" id="closeSettingsButton" type="button" value="✖">
+        </div>
+    </section>
+
+    <div class="overlay hidden"></div>
+
     <script src="renderer.js"></script>
 </body>
 </html>

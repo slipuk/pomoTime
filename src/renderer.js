@@ -3,6 +3,12 @@ let timeLeft = 25 * 60;
 let currentMode = "work"; //"shortBreak", 'longBreak'
 let workSectionCount = 0; // from 0 to 3
 
+const timerDisplay = document.getElementById("timerDisplay");
+const modeIndicator = document.getElementById("modeIndicator");
+const progressBarFill = document.getElementById("progressBarFill");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+
 function startTimer() {
   if (timer !== null) return; //for preventing doulbe launch
   timeLeft--;
@@ -19,7 +25,7 @@ function startTimer() {
       timer = null;
       onTimerEnd();
     }
-  }, 1000);
+  }, 1);
 }
 
 function stopTimer() {
@@ -40,19 +46,16 @@ function updateDisplay(seconds) {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
 
-  //to change actual text
-  //this interpolation method always leaves two numbers on each
-  //timer section like 01:02
-  document.getElementById('timerDisplay').textContent =
+
+  timerDisplay.textContent =
     `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
 
-  // to see what mode is currently in progress
-  document.getElementById("modeIndicator").textContent = 
+
+  modeIndicator.textContent = 
     currentMode === "work" ? "Work" :
     currentMode === "shortBreak" ? "Short Break" : "Long Break";
 
-  // to track how much time left
-  document.getElementById("progressBarFill").style.width = `${progressBarPersentage()}%`;
+  progressBarFill.style.width = `${progressBarPersentage()}%`;
 }
 
 // to chage current mode
@@ -91,3 +94,17 @@ function progressBarPersentage() {
   const persent = ( (totalTime - timeLeft) / totalTime ) * 100;
   return persent;
 }
+
+function openSettingsWindow() {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+}
+
+function closeSettingsWindow() {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) closeSettingsWindow();
+});
