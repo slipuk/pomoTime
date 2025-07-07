@@ -46,10 +46,8 @@ function updateDisplay(seconds) {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
 
-
   timerDisplay.textContent =
     `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-
 
   modeIndicator.textContent = 
     currentMode === "work" ? "Work" :
