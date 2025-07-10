@@ -1,6 +1,6 @@
 const timerDisplay = document.getElementById("timerDisplay");
-const modeIndicator = document.getElementById("modeIndicator");
 const progressBarFill = document.getElementById("progressBarFill");
+const modeIndicator = document.getElementById("modeIndicator");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 
