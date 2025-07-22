@@ -5,7 +5,6 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 
 const settingsForm = document.getElementById("settingsForm");
-const work = settingsForm.elements.workDuration.value;
 
 const DEFAULT_WORK_DURATION = 25 * 60;
 const DEFAULT_SHORT_BRAKE_DURATION = 5 * 60;
@@ -114,4 +113,3 @@ document.addEventListener("keydown", function(e) {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) closeSettingsWindow();
 });
 
-console.log(settingsForm.elements.workDuration.value);
