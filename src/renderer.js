@@ -4,6 +4,9 @@ const modeIndicator = document.getElementById("modeIndicator");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 
+const settingsForm = document.getElementById("settingsForm");
+const work = settingsForm.elements.workDuration.value;
+
 const DEFAULT_WORK_DURATION = 25 * 60;
 const DEFAULT_SHORT_BRAKE_DURATION = 5 * 60;
 const DEFAULT_LONG_BRAKE_DURATION = 15 * 60;
@@ -12,6 +15,7 @@ let timer = null;
 let timeLeft = DEFAULT_WORK_DURATION;
 let currentMode = "work"; //"shortBreak", 'longBreak'
 let workSectionCount = 0; // from 0 to 3
+
 
 
 function startTimer() {
@@ -109,3 +113,5 @@ function closeSettingsWindow() {
 document.addEventListener("keydown", function(e) {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) closeSettingsWindow();
 });
+
+console.log(settingsForm.elements.workDuration.value);

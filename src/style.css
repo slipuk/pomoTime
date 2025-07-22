@@ -204,7 +204,7 @@ footer a:active {color: var(--font-color);}
  .switch {
     position: relative;
     display: inline-block;
-    width: 50px;
+    width: 45px;
     height: 25px;
 }
 
@@ -248,9 +248,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(21px);
-  -ms-transform: translateX(21px);
-  transform: translateX(21px);
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
 }
 
 .slider.round {
@@ -260,6 +260,10 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 } 
+
+.submitButton {
+    width: 100%;
+}
 
 hr {
     background-color: var(--font-color);
