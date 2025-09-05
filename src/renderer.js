@@ -5,7 +5,7 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const settingsForm = document.getElementById("settingsForm");
 
-const DEFAULT_WORK_DURATION = 25 * 60;
+const DEFAULT_WORK_DURATION = 25 * 60; //in seconds
 const DEFAULT_SHORT_BRAKE_DURATION = 5 * 60;
 const DEFAULT_LONG_BRAKE_DURATION = 15 * 60;
 
@@ -43,7 +43,7 @@ function resetTimer() {
   if (currentMode === "work") timeLeft = DEFAULT_WORK_DURATION;
   else if (currentMode === "shortBreak") timeLeft = DEFAULT_SHORT_BREAKE_DURATION;
   else if (currentMode === "longBreak") timeLeft = DEFAULT_LONG_BREAKE_DURATION;
-  updateDisplay(timeLeft * 60);
+  updateDisplay(timeLeft);
 }
 
 // updating display
