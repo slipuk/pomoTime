@@ -3,7 +3,6 @@ const progressBarFill = document.getElementById("progressBarFill");
 const modeIndicator = document.getElementById("modeIndicator");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
-
 const settingsForm = document.getElementById("settingsForm");
 
 const DEFAULT_WORK_DURATION = 25 * 60;
@@ -15,11 +14,9 @@ let timeLeft = DEFAULT_WORK_DURATION;
 let currentMode = "work"; //"shortBreak", 'longBreak'
 let workSectionCount = 0; // from 0 to 3
 
-
-
 function startTimer() {
   if (timer !== null) return; //for preventing doulbe launch
-  timeLeft--;
+  // timeLeft--;
   updateDisplay(timeLeft);
 
   // actual loop for timer
@@ -33,7 +30,7 @@ function startTimer() {
       timer = null;
       onTimerEnd();
     }
-  }, 1);
+  }, 1000);
 }
 
 function stopTimer() {
@@ -44,9 +41,9 @@ function stopTimer() {
 function resetTimer() {
   stopTimer();
   if (currentMode === "work") timeLeft = DEFAULT_WORK_DURATION;
-  else if (currentMode === "shortBreak") timeLeft = DEFAULT_SHORT_BRAKE_DURATION;
-  else if (currentMode === "longBreak") timeLeft = DEFAULT_LONG_BRAKE_DURATION;
-  updateDisplay(timeLeft);
+  else if (currentMode === "shortBreak") timeLeft = DEFAULT_SHORT_BREAKE_DURATION;
+  else if (currentMode === "longBreak") timeLeft = DEFAULT_LONG_BREAKE_DURATION;
+  updateDisplay(timeLeft * 60);
 }
 
 // updating display
